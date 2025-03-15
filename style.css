@@ -1,0 +1,410 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.774);
+    backdrop-filter: brightness(70%);
+    font-family: Arial, Helvetica, sans-serif;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+}
+
+.hello {
+    position: absolute;
+    top: -60px;
+    left: 50px;
+    font-size: 45px;
+    font-weight: bold;
+    color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    max-width: 1824px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar {
+
+    display: flex;
+    position: relative;
+    height: 62px;
+    z-index: 10;
+    justify-content: space-between;
+    gap: 50px;
+    align-content: end;
+    flex-wrap: wrap;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    padding-top: 20px;
+
+
+
+}
+
+.logo1 {
+    opacity: 0%;
+    height: 100px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.language {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+
+
+}
+
+.language select {
+    border-radius: 30px;
+    border: 1px solid rgba(245, 245, 245, 0.568);
+    background-color: rgba(23, 23, 23, 0.4);
+    background-image: url("assets/images/language.svg");
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 4px;
+    color: white;
+    padding-left: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 32px;
+    width: 124px;
+    text-align: center;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+
+}
+
+select:focus {
+    outline: 1px solid white;
+    outline-offset: 2px;
+
+}
+
+.btn1 {
+    padding: 5px 15px;
+    padding-bottom: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+
+}
+
+.intro {
+    display: flex;
+
+}
+
+.box {
+    justify-self: center;
+    align-self: center;
+    border-radius: 30px;
+    max-width: 1824px;
+    height: 732px;
+    background-image: url("assets/images/bg.jpg");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    border-style: groove;
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, 0.342);
+    filter: blur(1px);
+    filter: opacity(0.55);
+    z-index: 1;
+    position: relative;
+    top: 0px;
+    filter: brightness(0.35);
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.hero {
+    z-index: 10;
+    color: whitesmoke;
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    top: -450px;
+    flex-direction: column;
+
+}
+
+.hero> :nth-child(1) {
+    font-size: 64px;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    font-weight: 900;
+    text-align: center;
+    padding: 10px;
+}
+
+.hero> :nth-child(2) {
+    font-size: 24px;
+    text-align: center;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+}
+
+.hero> :nth-child(3) {
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+}
+
+.hero1 {
+    margin-top: 10px;
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+
+}
+
+.hero1>input {
+
+    border-radius: 40px;
+    width: 340px;
+    height: 52px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px 10px;
+    background-color: rgba(23, 23, 23, 0.89);
+    color: white;
+}
+
+input:focus {
+    outline: 2px solid white;
+    outline-offset: 3px;
+    box-shadow: none;
+    border-color: inherit;
+}
+
+.btn2 {
+    border-radius: 30px;
+    width: 229px;
+    height: 56px;
+    font-size: 24px;
+    background-color: red;
+    color: white;
+}
+
+.trending {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 10px;
+    position: relative;
+    top: -200px;
+    max-width: 1500px;
+    height: 500ppx;
+    border-radius: 30px;
+    z-index: 10;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+}
+
+.scroller {
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    padding-left: 20px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.card {
+    position: relative;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+}
+
+.outline {
+    position: absolute;
+    left: 0px;
+    transform: translateX(-15px);
+    font-size: 80px;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: -2px -2px 0 rgb(255, 255, 255), 2px -2px 0 rgb(255, 255, 255), -2px 2px 0 rgb(255, 255, 255), 2px 2px 0 rgb(255, 255, 255);
+}
+
+.card>img {
+    border-radius: 20px;
+}
+
+.trending>.scroller>.card>img {
+    height: 420px;
+    width: 201px;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+}
+
+.scroll-btn1,
+.scroll-btn2 {
+    height: 80px;
+    padding: 5px 5px;
+    border-radius: 30px;
+    align-self: center;
+    background-color: rgba(8, 9, 10, 0.644);
+    opacity: 50%;
+}
+
+
+@media screen and (max-width:1900px) {
+    .hero> :nth-child(1) {
+        font-size: 56px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .hero> :nth-child(3) {
+        font-size: 16px;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1280px) {
+    .hero> :nth-child(1) {
+        font-size: 48px;
+        ;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .hero> :nth-child(3) {
+        font-size: 14px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .trending {
+        transform: scale(0.75);
+    }
+    
+}
+
+@media screen and (max-width:960px) {
+
+    .navbar>img {
+        opacity: 0%;
+    }
+
+    .logo1 {
+        opacity: 100%;
+        position: relative;
+        right: 200px;
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .hero> :nth-child(3) {
+        font-size: 14px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .hero1 {
+        transform: scale(0.75);
+    }
+    .trending {
+        position: relative;
+        top: -200px;
+            transform: scale(0.55);
+    }
+    .hello{
+        font-size: 32px;
+    }
+  
+}
+
+@media screen and (max-width:600px) {
+    .navbar {
+        transform: scale(0.95);
+        justify-content: center;
+
+    }
+
+    .logo1 {
+        opacity: 100%;
+        position: relative;
+        right: 30px;
+    }
+
+    .language select {
+        width: 40px;
+    }
+
+    .btn1 {
+        padding: 1px;
+        font-size: 12px;
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .hero> :nth-child(3) {
+        font-size: 14px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .hero1{
+        display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scale(0.55);
+    align-self: center;
+    align-content: center;
+    }
+    .trending{
+        position: relative;
+        top: -300px;
+    }
+}
