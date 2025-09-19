@@ -11,67 +11,282 @@
 </head>
 
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu">
+            <button class="close-menu" id="closeMenu">&times;</button>
+            <nav class="mobile-nav">
+                <a href="#home">Home</a>
+                <a href="#trending">Trending</a>
+                <a href="#movies">Movies</a>
+                <a href="#tv-shows">TV Shows</a>
+                <a href="#my-list">My List</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Movie Details Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="movie-modal" id="movieModal">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="modal-poster" id="modalPoster" src="" alt="">
+                    <div class="modal-info">
+                        <h2 class="modal-title" id="modalTitle"></h2>
+                        <div class="modal-meta">
+                            <span class="modal-year" id="modalYear"></span>
+                            <span class="modal-rating" id="modalRating"></span>
+                            <span class="modal-duration" id="modalDuration"></span>
+                        </div>
+                        <p class="modal-description" id="modalDescription"></p>
+                        <div class="modal-actions">
+                            <button class="play-btn">▶ Play</button>
+                            <button class="like-btn" id="modalLikeBtn">👍</button>
+                            <button class="dislike-btn" id="modalDislikeBtn">👎</button>
+                            <button class="add-to-list-btn" id="modalAddToListBtn">+ My List</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="main">
-        <nav class="navbar">
-            <img src="assets/images/logo.svg" width="148px" alt="Netflix Logo">
-          <img class="logo1" src="assets/images/Netflix_Symbol_RGB.png" alt="">
+        <nav class="navbar" id="navbar">
+            <img src="assets/images/logo.svg" width="148px" alt="Netflix Logo" class="main-logo">
+            <img class="logo1" src="assets/images/Netflix_Symbol_RGB.png" alt="">
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#trending">Trending</a>
+                <a href="#movies">Movies</a>
+                <a href="#tv-shows">TV Shows</a>
+                <a href="#my-list">My List</a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search movies, TV shows...">
+                <button class="search-btn" id="searchBtn">🔍</button>
+            </div>
+
             <div class="language">
+                <!-- Category Filter -->
+                <select name="category" id="categoryFilter" class="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="drama">Drama</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="horror">Horror</option>
+                </select>
+                
                 <select name="language">
                     <option value="english">English</option>
                     <option value="hindi">Hindi</option>
                 </select>
+                
+                <!-- Mobile Menu Button -->
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
                 <button class="btn1">Sign In</button>
             </div>
         </nav>
 
         <div class="box"></div>
 
-        <div class="hero">
+        <div class="hero" id="home">
             <span>Unlimited movies, TV <br> shows and more</span>
             <span>Starts at ₹149. Cancel at any time.</span>
             <span>Ready to watch? Enter your email to create or restart your membership.</span>
             <div class="hero1">
                 <input type="email" placeholder="Email Address">
-                <button class="btn2">Get Started &nbsp;<img src="assets/images/rightarrow.svg" height="20px"
-                        alt=""></button>
+                <button class="btn2">Get Started &nbsp;<img src="assets/images/rightarrow.svg" height="20px" alt=""></button>
             </div>
         </div>
     </div>
 
-    <div class="trending">
+    <div class="trending" id="trending">
         <div class="hello">Trending Now</div>
-        <button class="scroll-btn1"><img src="assets/images/leftarrow.svg" alt=""></button>
+        <button class="scroll-btn scroll-btn1" data-direction="left"><img src="assets/images/leftarrow.svg" alt=""></button>
 
-        <div class="scroller">
-
-            <div class="card"><img src="assets/images/card1.jpg" alt="Movie 1">
-            <span class="outline outline-1">1</span>
+        <div class="scroller" id="trendingScroller">
+            <div class="card" data-movie-id="1" data-title="Stranger Things" data-year="2023" data-rating="8.7" data-duration="45min" data-category="thriller" data-description="When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.">
+                <img src="assets/images/card1.jpg" alt="Movie 1">
+                <span class="outline outline-1">1</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="1">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="1">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="1">+</button>
+                    </div>
+                    <h3>Stranger Things</h3>
+                    <p>Thriller • 2023 • 8.7★</p>
+                </div>
             </div>
-            <div class="card"><img src="assets/images/card2.jpg" alt="Movie 2">
-                <span class="outline outline-1">2</span></div>
-            <div class="card"><img src="assets/images/card3.jpg" alt="Movie 3">
-                <span class="outline outline-1">3</span></div>
-            <div class="card"><img src="assets/images/card4.jpg" alt="Movie 4">
-                <span class="outline outline-1">4</span></div>
-            <div class="card"><img src="assets/images/card5.jpg" alt="Movie 5">
-                <span class="outline outline-1">5</span></div>
-            <div class="card"><img src="assets/images/card6.jpg" alt="Movie 6">
-                <span class="outline outline-1">6</span></div>
-            <div class="card"><img src="assets/images/card7.jpg" alt="Movie 7">
-                <span class="outline outline-1">7</span></div>
-            <div class="card"><img src="assets/images/card8.jpg" alt="Movie 8">
-                <span class="outline outline-1">8</span></div>
-            <div class="card"><img src="assets/images/card9.jpg" alt="Movie 9">
-                <span class="outline outline-1">9</span></div>
-            <div class="card"><img src="assets/images/card10.jpg" alt="Movie 10">
-                <span class="outline outline-1">10</span></div>
-
-
+            
+            <div class="card" data-movie-id="2" data-title="The Crown" data-year="2022" data-rating="8.9" data-duration="60min" data-category="drama" data-description="Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the twentieth century.">
+                <img src="assets/images/card2.jpg" alt="Movie 2">
+                <span class="outline outline-1">2</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="2">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="2">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="2">+</button>
+                    </div>
+                    <h3>The Crown</h3>
+                    <p>Drama • 2022 • 8.9★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="3" data-title="Money Heist" data-year="2023" data-rating="8.3" data-duration="50min" data-category="action" data-description="An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.">
+                <img src="assets/images/card3.jpg" alt="Movie 3">
+                <span class="outline outline-1">3</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="3">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="3">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="3">+</button>
+                    </div>
+                    <h3>Money Heist</h3>
+                    <p>Action • 2023 • 8.3★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="4" data-title="Wednesday" data-year="2023" data-rating="8.1" data-duration="45min" data-category="comedy" data-description="Follows Wednesday Addams' years as a student at Nevermore Academy, where she attempts to master her emerging psychic ability.">
+                <img src="assets/images/card4.jpg" alt="Movie 4">
+                <span class="outline outline-1">4</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="4">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="4">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="4">+</button>
+                    </div>
+                    <h3>Wednesday</h3>
+                    <p>Comedy • 2023 • 8.1★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="5" data-title="The Witcher" data-year="2022" data-rating="8.2" data-duration="55min" data-category="action" data-description="Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.">
+                <img src="assets/images/card5.jpg" alt="Movie 5">
+                <span class="outline outline-1">5</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="5">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="5">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="5">+</button>
+                    </div>
+                    <h3>The Witcher</h3>
+                    <p>Action • 2022 • 8.2★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="6" data-title="Squid Game" data-year="2023" data-rating="8.0" data-duration="50min" data-category="thriller" data-description="Hundreds of cash-strapped players accept a strange invitation to compete in children's games for a tempting prize.">
+                <img src="assets/images/card6.jpg" alt="Movie 6">
+                <span class="outline outline-1">6</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="6">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="6">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="6">+</button>
+                    </div>
+                    <h3>Squid Game</h3>
+                    <p>Thriller • 2023 • 8.0★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="7" data-title="Dark" data-year="2022" data-rating="8.8" data-duration="60min" data-category="horror" data-description="A family saga with a supernatural twist, set in a German town where the disappearance of two young children exposes the relationships among four families.">
+                <img src="assets/images/card7.jpg" alt="Movie 7">
+                <span class="outline outline-1">7</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="7">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="7">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="7">+</button>
+                    </div>
+                    <h3>Dark</h3>
+                    <p>Horror • 2022 • 8.8★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="8" data-title="Ozark" data-year="2023" data-rating="8.4" data-duration="55min" data-category="drama" data-description="A financial advisor drags his family from Chicago to the Missouri Ozarks, where he must launder money to appease a drug boss.">
+                <img src="assets/images/card8.jpg" alt="Movie 8">
+                <span class="outline outline-1">8</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="8">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="8">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="8">+</button>
+                    </div>
+                    <h3>Ozark</h3>
+                    <p>Drama • 2023 • 8.4★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="9" data-title="Bridgerton" data-year="2022" data-rating="7.3" data-duration="50min" data-category="drama" data-description="Wealth, lust, and betrayal set in the backdrop of Regency era England, seen through the eyes of the powerful Bridgerton family.">
+                <img src="assets/images/card9.jpg" alt="Movie 9">
+                <span class="outline outline-1">9</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="9">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="9">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="9">+</button>
+                    </div>
+                    <h3>Bridgerton</h3>
+                    <p>Drama • 2022 • 7.3★</p>
+                </div>
+            </div>
+            
+            <div class="card" data-movie-id="10" data-title="The Queen's Gambit" data-year="2023" data-rating="8.5" data-duration="60min" data-category="drama" data-description="Orphaned at the tender age of nine, prodigious introvert Beth Harmon discovers and masters the game of chess in 1960s USA.">
+                <img src="assets/images/card10.jpg" alt="Movie 10">
+                <span class="outline outline-1">10</span>
+                <div class="card-overlay">
+                    <div class="card-actions">
+                        <button class="play-btn-small">▶</button>
+                        <button class="like-btn-small" data-movie-id="10">👍</button>
+                        <button class="dislike-btn-small" data-movie-id="10">👎</button>
+                        <button class="add-list-btn-small" data-movie-id="10">+</button>
+                    </div>
+                    <h3>The Queen's Gambit</h3>
+                    <p>Drama • 2023 • 8.5★</p>
+                </div>
+            </div>
         </div>
-        <button class="scroll-btn2"><img src="assets/images/rightarrow.svg" alt=""></button>
+        
+        <button class="scroll-btn scroll-btn2" data-direction="right"><img src="assets/images/rightarrow.svg" alt=""></button>
     </div>
 
+    <!-- My List Section -->
+    <div class="my-list-section" id="my-list">
+        <div class="section-title">My List</div>
+        <div class="my-list-container" id="myListContainer">
+            <div class="empty-list" id="emptyList">
+                <p>Your list is empty. Add some movies and shows to get started!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
